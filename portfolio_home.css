@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
+
+.color-pallete{
+    color: pink;
+    color: #50164A;
+}
+
+.fonts{
+    font-family: Lobster;
+    font-family: M PLUS Rounded 1c;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed; /* or 'relative' if you don’t want it to stick */
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* better than % for consistent height */
+  background-color: pink; /* <--- this sets the header color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#logo {
+    color: #50164A;
+    font-size: 40px;
+    font-family: Lobster;
+}
+
+#navigation-bar ul {
+  list-style: none;      /* remove bullet points */
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: M PLUS Rounded 1c;
+  display: flex;         /* arrange li items horizontally */
+  gap: 1.5rem;           /* space between links */
+}
+
+#navigation-bar a {
+  text-decoration: none;
+  color: #50164A;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#navigation-bar a:hover {
+  font-size: 1.3em; /* slightly larger */
+  color: #7e2e70; /* darker purple for contrast */
+}
+
+.home-container {
+  position: relative;           /* allows stacking above the wave */
+  z-index: 1;                   /* keeps it in front of the background animation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: calc(100vh - 10vh);   /* full height minus header */
+  width: 100%;
+  padding-top: 10vh;            /* prevents overlap with fixed header */
+  box-sizing: border-box;
+}
+
+
+.home-container figcaption{
+    padding: 3px;
+    font-size: 16px;
+    color:#50164A;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+}
+
+.intro {
+  max-width: 600px;
+}
+
+.greeting {
+    margin: 0;
+    font-size: 70px;
+    color:#50164A;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder;
+
+}
+
+.intro p{
+    font-family: 'M PLUS Rounded 1c';
+    font-size: 20px;
+}
+
+b{
+    color:#50164A
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn, .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background-color: #50164A;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #7e2e70;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #50164A;
+  color: #50164A;
+}
+
+.btn-secondary:hover {
+  background-color: #50164A;
+  color: white;
+}
+
+.quote {
+  position: fixed;           /* stays at bottom even when scrolling */
+  bottom: 0;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: white;
+  color: #7e2e70;            /* text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* optional shadow for separation */
+  z-index: 2;                /* ensure it's above the waves */
+}
