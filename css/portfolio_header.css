@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed; /* or 'relative' if you don’t want it to stick */
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* better than % for consistent height */
+  background-color: pink; /* <--- this sets the header color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  height:80px;
+  width: auto;
+}
+
+.logo h1 {
+    color: #50164A;
+    font-size: 40px;
+    font-family: Lobster;
+}
+
+#navigation-bar ul {
+  list-style: none;      /* remove bullet points */
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: M PLUS Rounded 1c;
+  display: flex;         /* arrange li items horizontally */
+  gap: 1.5rem;           /* space between links */
+}
+
+#navigation-bar a {
+  text-decoration: none;
+  color: #50164A;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#navigation-bar a:hover {
+  font-size: 1.3em; /* slightly larger */
+  color: #7e2e70; /* darker purple for contrast */
+}
