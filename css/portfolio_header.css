@@ -6,8 +6,8 @@ body {
   padding: 0;
 }
 
-header {
-  position: fixed; /* or 'relative' if you don’t want it to stick */
+header { /* or 'relative' if you don’t want it to stick */
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;

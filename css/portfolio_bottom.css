@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
 
 .bottom-quote {
-  position: fixed;
   z-index: 2;
   bottom: 0; 
   left: 0; 
@@ -16,4 +15,12 @@
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1rem;
   color: #7e2e70;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.relative{
+  position: relative;
 }

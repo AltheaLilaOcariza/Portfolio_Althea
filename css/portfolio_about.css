@@ -1,3 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
+
 b{
     color:#50164A
+}
+
+.line{
+  height: 2px;
+  width: 80%;
+  margin-left: 10%;
+  background-color: rgb(215, 214, 214);
+}
+
+.about-container {
+  position: relative;           /* allows stacking above the wave */
+  z-index: 1;                   /* keeps it in front of the background animation */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: calc(100vh - 10vh);   /* full height minus header */
+  width: 70%;
+  height: auto;
+  background-color: white;
+  margin-top: 15vh; 
+  margin-left: 15%;           /* prevents overlap with fixed header */
+  margin-bottom: 15vh;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgb(186, 184, 184);
+  border-radius: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: larger;
+}
+
+.personal-info{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  margin-bottom: 40px;
+}
+
+.personal-info img{
+  height: 300px;
+  width: auto;
+  border-radius: 5%;
+}
+.info-container h2{
+  font-family: Lobster;
+  color:#50164A;
+  font-size: 50px;
+}
+
+.misc-info{
+  position:relative;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+/*info Section*/
+.info-section{
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 40px
+}
+
+.info-section ul{
+  list-style-type: none;
+}
+
+ul li{
+  margin-bottom: 10px;
+}
+
+.info-section h2{
+  font-family: Lobster;
+  color:#50164A;
+  font-size: 45px;
+}
+
+.bottom-quote{
+  position: relative;
 }
