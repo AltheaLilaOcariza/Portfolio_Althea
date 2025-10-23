@@ -24,3 +24,7 @@
 .relative{
   position: relative;
 }
+
+.shadow{
+  box-shadow: 0 0 5px rgb(205, 204, 204);
+}

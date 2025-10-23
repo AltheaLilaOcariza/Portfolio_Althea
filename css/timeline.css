@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 0 auto;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    max-width: 60%;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffd5f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(247, 166, 203, 0.384);
+    width: 45%; /* Adjust width for content */
+    color:#50164A;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.timeline-item:first-child{
+    background-color: #f7a6cb;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    transform: translateX(-5%); /* Offset for visual balance */
+}
+
+.timeline-item:nth-child(even) {
+    left: 55%; /* Position on the right side */
+    transform: translateX(5%); /* Offset for visual balance */
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #50164A;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -28px; /* Position dot relative to odd item */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -28px; /* Position dot relative to even item */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+}
+
+.timeline-address{
+    font-size: 0.9em;
+    color:#50164A;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.timeline-date {
+    font-size: 0.9em;
+    color: #50164A;
+}
+
+.image-container{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-color: #ccc;
+    border-width: 5px;
+    box-shadow: 0 0 3px rgba(184, 183, 183, 0.417);
+}
