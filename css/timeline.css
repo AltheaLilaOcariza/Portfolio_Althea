@@ -2,12 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
 
 .timeline {
+    z-index: 1;
     position: relative;
     padding: 20px 0;
     margin: 0 auto;
     margin-top: 15vh;
     margin-bottom: 15vh;
     max-width: 60%;
+}
+
+.education h2 {
+    z-index: 1;
+    font-family: Lobster;
+    color:#50164A;
+    text-align: center;
+    font-size: 16vh;
+}
+
+.education{
+    position: relative;
+    z-index: 1;
+    top:0;
+    left:0;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.scroll{
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color:#50164A;
+    font-size: 1em;
 }
 
 .timeline::before {
@@ -17,7 +47,7 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background-color: #ccc;
+    background-color: rgb(246, 232, 234);
     transform: translateX(-50%);
 }
 
@@ -39,13 +69,13 @@
 }
 
 .timeline-item:nth-child(odd) {
-    left: 0;
-    transform: translateX(-5%); /* Offset for visual balance */
+    right: 0%;
+    transform: translateX(-9%); /* Offset for visual balance */
 }
 
 .timeline-item:nth-child(even) {
-    left: 55%; /* Position on the right side */
-    transform: translateX(5%); /* Offset for visual balance */
+    left: 51%; /* Position on the right side */
+    transform: translateX(9%); /* Offset for visual balance */
 }
 
 .timeline-dot {
@@ -58,16 +88,17 @@
 }
 
 .timeline-item:nth-child(odd) .timeline-dot {
-    right: -28px; /* Position dot relative to odd item */
-    top: 50%;
-    transform: translateY(-50%);
+  right: -21px; /* 16px dot width + 5px gap = 21px */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .timeline-item:nth-child(even) .timeline-dot {
-    left: -28px; /* Position dot relative to even item */
-    top: 50%;
-    transform: translateY(-50%);
+  left: -21px; /* 16px dot width + 5px gap = 21px */
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 
 .timeline-content h3 {
     margin-top: 0;

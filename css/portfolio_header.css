@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
 
+
+.color-pallete{
+  color: rgb(254, 155, 172);
+  color:pink;
+}
 body {
   margin: 0;
   padding: 0;
@@ -60,4 +65,13 @@ header { /* or 'relative' if you don’t want it to stick */
 #navigation-bar a:hover {
   font-size: 1.3em; /* slightly larger */
   color: #7e2e70; /* darker purple for contrast */
+}
+
+#navigation-bar a.active{
+  background-color: rgb(254, 155, 172); /* darker purple for contrast */
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10%;
 }
