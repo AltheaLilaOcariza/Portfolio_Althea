@@ -1,0 +1,57 @@
+.main-info-container {
+  position: relative;           /* allows stacking above the wave */
+  z-index: 1;                   /* keeps it in front of the background animation */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: calc(100vh - 10vh);   /* full height minus header */
+  width: 70%;
+  height: auto;
+  margin-top: 15vh; 
+  margin-left: 15%;           /* prevents overlap with fixed header */
+  margin-bottom: 15vh;
+  padding: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: larger;
+}
+
+.certificates-container{
+  margin-top: 50px;
+}
+.title{
+  font-size: 50px;
+}
+
+.card{
+  padding:20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(29, 22, 22, 0.15);
+  margin: 20px 0px;
+  height:auto;
+  width: auto;
+}
+
+.card h3 {
+  color: #50164A;
+}
+
+.card li::marker {
+  color: rgb(254, 155, 172);
+}
+
+.certificate {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.left-side-cardinfo img{
+  height: 150px;
+  width: auto;
+}
+
+.date{
+  font-size: medium;
+  color:rgb(89, 89, 89);
+}
