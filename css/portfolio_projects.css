@@ -1,0 +1,70 @@
+.projects-card-container{
+  position: relative;           /* allows stacking above the wave */
+  z-index: 1;                   /* keeps it in front of the background animation */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: calc(100vh - 10vh);   /* full height minus header */
+  width: 70%;
+  height: auto;
+  margin-top: 15vh; 
+  margin-left: 15%;           /* prevents overlap with fixed header */
+  margin-bottom: 15vh;
+  padding: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: larger;
+}
+
+.info-container img{
+    height: 200px;
+    width: auto;
+}
+
+.inside-project {
+    padding: 20px;
+    margin-left: 20px;
+    height: auto;
+    width: auto;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 2%;
+    box-shadow: 0 4px 20px rgba(29, 22, 22, 0.15);
+}
+
+.inside-project a{
+    text-decoration: none;
+    padding: 6px 15px;
+    background-color: #f7a6cb ;
+    border-radius: 20px;
+    color: white;
+}
+
+.inside-project a:hover{
+    background-color: #50164A;
+    box-shadow: 0 1px 10px rgba(29, 22, 22, 0.15);
+}
+
+.inside-project a:active{
+    background-color: #50164A;
+}
+
+.card-header {
+    margin-top: 0;
+}
+
+.card-header.big {
+    font-size: 40px;
+    color: #50164A;
+}
+
+.project-container {
+    background-color: #ffcfe46c;
+    padding: 20px;
+    border-radius: 2%;
+    height: auto;
+    width: auto;
+    box-sizing: border-box;
+    margin: 20px 0px;
+}
+
+
