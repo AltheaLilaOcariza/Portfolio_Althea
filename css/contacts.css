@@ -1,0 +1,49 @@
+.main-content-container {
+  position: relative;           /* allows stacking above the wave */
+  z-index: 1;                   /* keeps it in front of the background animation */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: calc(100vh - 10vh);   /* full height minus header */
+  width: 70%;
+  height: auto;
+  background-color: white;
+  margin-top: 15vh; 
+  margin-left: 15%;           /* prevents overlap with fixed header */
+  margin-bottom: 15vh;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgb(186, 184, 184);
+  border-radius: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: larger;
+}
+
+.main-content-container h2{
+  font-size: 40px;
+  color: #50164A;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  fill: #ff66a3; /* pink color */
+}
+
+.icon path {
+  fill:#ff66a3;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact a{
+  text-decoration: none;
+  color:black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
