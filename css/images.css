@@ -1,0 +1,54 @@
+/* Outer container of the scroll area */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Hide scrollbar for Chrome */
+.image-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Left/Right Buttons */
+.scroll-btn {
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.img-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory; /* optional smooth snapping */
+}
+
+.img-container img {
+    flex: 0 0 auto;
+    width: 300px;        /* adjust size */
+    height: auto;
+    border-radius: 10px;
+    scroll-snap-align: start; /* optional */
+}
