@@ -1,42 +1,46 @@
 .projects-card-container{
   position: relative;           /* allows stacking above the wave */
   z-index: 1;                   /* keeps it in front of the background animation */
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 3rem;
-  height: calc(100vh - 10vh);   /* full height minus header */
-  width: 70%;
-  height: auto;
-  margin-top: 15vh; 
-  margin-left: 15%;           /* prevents overlap with fixed header */
-  margin-bottom: 15vh;
-  padding: 20px;
+  gap: 1rem;
+  min-height: calc(100vh - 7rem);
+  width: 100%;
+  margin-top: 0; 
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 7rem 1rem 0;
+  box-sizing: border-box;
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: larger;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
 .info-container img{
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
 }
 
 .inside-project {
-    padding: 20px;
-    margin-left: 20px;
+    padding: 1rem;
+    margin: 0 auto 1rem auto;
     height: auto;
-    width: auto;
+    width: 90%;
+    max-width: 90%;
     background-color: white;
-    margin-bottom: 10px;
-    border-radius: 2%;
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(29, 22, 22, 0.15);
 }
 
 .inside-project a{
+    display: inline-block;
     text-decoration: none;
     padding: 6px 15px;
-    background-color: #f7a6cb ;
+    background-color: #f7a6cb;
     border-radius: 20px;
     color: white;
+    font-size: clamp(12px, 2vw, 14px);
 }
 
 .inside-project a:hover{
@@ -50,21 +54,53 @@
 
 .card-header {
     margin-top: 0;
+    font-size: clamp(20px, 5vw, 40px);
 }
 
 .card-header.big {
-    font-size: 40px;
+    font-size: clamp(24px, 6vw, 40px);
     color: #50164A;
 }
 
 .project-container {
     background-color: #ffcfe46c;
-    padding: 20px;
-    border-radius: 2%;
+    padding: 1rem;
+    border-radius: 8px;
     height: auto;
-    width: auto;
+    width: 100%;
+    max-width: 98%;
     box-sizing: border-box;
-    margin: 20px 0px;
+    margin: 1rem auto;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .projects-card-container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    padding: 2rem;
+  }
+
+  .inside-project {
+    padding: 2rem;
+    margin: 0 auto 1rem auto;
+    max-width: 95%;
+  }
+
+  .info-container img {
+    height: 200px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-card-container {
+    width: 70%;
+    margin-left: 15%;
+  }
 }
 
 
