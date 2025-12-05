@@ -8,9 +8,13 @@
     margin: 0 auto;
     margin-top: 15vh;
     margin-bottom: 15vh;
-    max-width: 60%;
+    max-width: 90%; /* allow more room so items can be narrower on large screens */
+    --timeline-item-width: 34%;
+    --timeline-gap: 1.5%; /* horizontal gap from center line */
+    --timeline-neg-gap: -1.5%;
 }
 
+/*
 .timeline::before {
     content: '';
     position: absolute;
@@ -21,15 +25,16 @@
     background-color: rgb(246, 232, 234);
     transform: translateX(-50%);
 }
+    */
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
-    padding: 20px;
+    margin-bottom: 3%;            /* vertical spacing as percent */
+    padding: 1.6%;                /* padding in percent for fluid scaling */
     background-color: #ffd5f0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(247, 166, 203, 0.384);
-    width: 45%; /* Adjust width for content */
+    border-radius: 0.5%;
+    box-shadow: 0 0.2% 0.6% rgba(247, 166, 203, 0.384);
+    width: var(--timeline-item-width); /* item width kept in percent */
     color:#50164A;
     font-family: 'M PLUS Rounded 1c', sans-serif;
 
@@ -40,19 +45,39 @@
 }
 
 .timeline-item:nth-child(odd) {
-    right: 0%;
-    transform: translateX(-9%); /* Offset for visual balance */
+    /* place left-side items to the left of center using gap and item width */
+    left: calc(50% - var(--timeline-item-width) - var(--timeline-gap));
+    transform: translateX(var(--timeline-neg-gap));
 }
 
 .timeline-item:nth-child(even) {
-    left: 51%; /* Position on the right side */
-    transform: translateX(9%); /* Offset for visual balance */
+    /* place right-side items to the right of center using gap */
+    left: calc(50% + var(--timeline-gap));
+    transform: translateX(var(--timeline-gap));
+}
+
+/* Larger screens: make items slightly narrower to ensure fit */
+@media (min-width: 1024px) {
+    .timeline {
+        max-width: 78%;
+    }
+
+    .timeline-item {
+        width: 30%;
+        padding: 1.2%;
+        margin-bottom: 2.2%;
+    }
+
+    .timeline-item:nth-child(odd) { transform: translateX(-2%); }
+    .timeline-item:nth-child(even) { transform: translateX(2%); left: 51%; }
 }
 
 .timeline-dot {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 1.6%;   /* percent of timeline width */
+    height: 1.6%;
+    max-width: 18px; /* keep a cap so dot doesn't grow too large */
+    max-height: 18px;
     background-color: #50164A;
     border-radius: 50%;
     z-index: 1;
@@ -89,10 +114,55 @@
 }
 
 .image-container{
-    height: 200px;
     width: 100%;
+    aspect-ratio: 16/9;   /* responsive height based on width */
     object-fit: cover;
     border-color: #ccc;
-    border-width: 5px;
-    box-shadow: 0 0 3px rgba(184, 183, 183, 0.417);
+    border-width: 0.4%;
+    box-shadow: 0 0 0.3% rgba(184, 183, 183, 0.417);
+}
+
+/* Responsive: for widths <800px hide center line/dots and center items */
+@media (max-width: 799px) {
+    .timeline {
+        max-width: 100%;
+        padding: 6rem 1rem 0;
+        margin-top: 12vh;
+    }
+
+    /* hide the central vertical line */
+    .timeline::before {
+        display: none;
+    }
+
+    /* hide the dots */
+    .timeline-dot {
+        display: none !important;
+    }
+
+    /* make items full-width (95%) and center them */
+    .timeline-item {
+        width: 95%;
+        margin: 0.8rem auto;
+        padding: 3%;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        border-radius: 6px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .timeline-address {
+        margin-left: 0;
+    }
+
+    .image-container{
+        aspect-ratio: 4/3;
+    }
 }

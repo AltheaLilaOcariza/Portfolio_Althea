@@ -3,7 +3,9 @@
     font-family: Lobster;
     color:#50164A;
     text-align: center;
-    font-size: 16vh;
+    font-size: clamp(36px, 18vw, 220px);
+    margin: 0;
+    padding: 0;
 }
 
 .title-area{
@@ -11,10 +13,49 @@
     z-index: 1;
     top:0;
     left:0;
-    margin-top: 15vh;
-    margin-bottom: 10vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    margin-top: clamp(10vh, 12vw, 12vh);
+    margin-bottom: 5vh;
+    padding-top: clamp(6vh, 8vw, 10vh);
+    padding-bottom: clamp(6vh, 8vw, 10vh);
+}
+
+/* Mobile: smaller title, reduced top margin */
+@media (max-width: 599px) {
+    .title-area h2 {
+        font-size: clamp(28px, 16vw, 90px);
+    }
+    
+    .title-area {
+        margin-top: clamp(40vh, 10vw, 40vh);
+        padding-top: clamp(4vh, 6vw, 8vh);
+        padding-bottom: clamp(10vh, 6vw, 10vh);
+    }
+}
+
+/* Tablet: adjust spacing */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .title-area h2 {
+        font-size: clamp(48px, 17vw, 140px);
+    }
+    
+    .title-area {
+        margin-top: clamp(10vh, 11vw, 11vh);
+        padding-top: clamp(5vh, 7vw, 9vh);
+        padding-bottom: clamp(5vh, 7vw, 9vh);
+    }
+}
+
+/* Desktop: shorter top margin */
+@media (min-width: 1024px) {
+    .title-area h2 {
+        font-size: clamp(140px, 20vw, 220px);
+    }
+    
+    .title-area {
+        margin-top: clamp(8vh, 9vw, 10vh);
+        padding-top: clamp(8vh, 10vw, 12vh);
+        padding-bottom: clamp(8vh, 10vw, 12vh);
+    }
 }
 
 .scroll{
@@ -24,5 +65,5 @@
     text-align: center;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     color:#50164A;
-    font-size: 1em;
+    font-size: clamp(12px, 2.5vw, 16px);
 }

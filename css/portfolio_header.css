@@ -136,6 +136,10 @@ header { /* or 'relative' if you don't want it to stick */
   #navigation-bar ul {
     gap: 0.2rem;
   }
+  #navigation-bar a {
+    font-size: 80%;
+    padding: 0.3rem 0.5rem;
+  }
 }
 
 /* Tablet and larger screens */

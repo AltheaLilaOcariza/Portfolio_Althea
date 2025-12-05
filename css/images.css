@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     width: 100%;
+    padding: 0 1rem; /* keep a small side gutter */
+    justify-content: center; /* center on small viewports */
 }
 
 /* Hide scrollbar for Chrome */
@@ -51,4 +53,32 @@
     height: auto;
     border-radius: 10px;
     scroll-snap-align: start; /* optional */
+}
+
+/* Responsive sizing: images scale down smoothly as viewport narrows */
+.img-container {
+    gap: clamp(8px, 2vw, 20px);
+    padding: clamp(6px, 1.5vw, 10px) 0;
+}
+
+.img-container img {
+    /* fluid width: don't go below 120px, prefer ~22vw, cap at 300px */
+    width: clamp(120px, 22vw, 300px);
+    transition: width 180ms ease, transform 180ms ease;
+}
+
+/* Slightly smaller on narrow phones */
+@media (max-width: 479px) {
+    .slider-wrapper { padding: 0 0.5rem; }
+    .img-container img { width: clamp(100px, 40vw, 180px); }
+}
+
+/* Moderate phones / small tablets */
+@media (min-width: 480px) and (max-width: 767px) {
+    .img-container img { width: clamp(120px, 36vw, 220px); }
+}
+
+/* Reduce gaps on very small viewports */
+@media (max-width: 767px) {
+    .img-container { gap: 10px; }
 }
