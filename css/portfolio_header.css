@@ -1,11 +1,40 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
+﻿/* ----------------------------- */
+/* GOOGLE FONTS                  */
+/* ----------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
 
 
-.color-pallete{
-  color: rgb(254, 155, 172);
-  color:pink;
+/* ----------------------------- */
+/* COLOR VARIABLES (LIGHT MODE)  */
+/* ----------------------------- */
+:root {
+  --header-bg: pink;
+  --text-color: #50164A;
+  --text-hover: #7e2e70;
+  --active-bg: rgb(254, 155, 172);
+  --body-bg: #ffffff;
 }
+
+/* ----------------------------- */
+/* DARK MODE VARIABLES           */
+/* ----------------------------- */
+.dark-mode-theme {
+  --header-bg: #2b2b2b;
+  --text-color: #f5f5f5;
+  --text-hover: #f7b8ff;
+  --active-bg: #444;
+  --body-bg: #121212;
+}
+
+/* Smooth transition for the whole website */
+body, header, #navigation-bar a, .logo h1 {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ----------------------------- */
+/* BODY                          */
+/* ----------------------------- */
 body {
   margin: 0;
   padding: 0;
@@ -13,15 +42,19 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: var(--body-bg);
 }
 
-header { /* or 'relative' if you don't want it to stick */
+/* ----------------------------- */
+/* HEADER                        */
+/* ----------------------------- */
+header {
   position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: pink; /* <--- this sets the header color */
+  background-color: var(--header-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,6 +65,10 @@ header { /* or 'relative' if you don't want it to stick */
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
+/* ----------------------------- */
+/* LOGO                          */
+/* ----------------------------- */
 .logo{
   display: flex;
   align-items: center;
@@ -48,13 +85,16 @@ header { /* or 'relative' if you don't want it to stick */
 }
 
 .logo h1 {
-    color: #50164A;
-    font-size: clamp(20px, 4vw, 36px);
-    font-family: Lobster;
-    margin: 0;
-    white-space: nowrap;
+  color: var(--text-color);
+  font-size: clamp(20px, 4vw, 36px);
+  font-family: Lobster;
+  margin: 0;
+  white-space: nowrap;
 }
 
+/* ----------------------------- */
+/* NAVIGATION BAR                */
+/* ----------------------------- */
 #navigation-bar {
   display: flex;
   align-items: center;
@@ -65,12 +105,12 @@ header { /* or 'relative' if you don't want it to stick */
 }
 
 #navigation-bar ul {
-  list-style: none;      /* remove bullet points */
+  list-style: none;
   margin: 0;
   padding: 0;
   font-size: 14px;
   font-family: M PLUS Rounded 1c;
-  display: flex;         /* arrange li items horizontally */
+  display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -83,7 +123,7 @@ header { /* or 'relative' if you don't want it to stick */
 
 #navigation-bar a {
   text-decoration: none;
-  color: #50164A;
+  color: var(--text-color);
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -92,18 +132,69 @@ header { /* or 'relative' if you don't want it to stick */
   white-space: nowrap;
 }
 
-/* Hover effect */
 #navigation-bar a:hover {
-  color: #7e2e70; /* darker purple for contrast */
+  color: var(--text-hover);
 }
 
 #navigation-bar a.active{
-  background-color: rgb(254, 155, 172); /* darker purple for contrast */
+  background-color: var(--active-bg);
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
 }
 
-/* Mobile adjustments */
+/* ----------------------------- */
+/* DARK MODE TOGGLE (SLIDER)    */
+/* ----------------------------- */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 35px;
+  align-items: center;
+  justify-items: center;
+  margin-left: 1rem;
+}
+
+/* hide checkbox */
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+  margin-top: 10%;
+}
+
+/* Slider knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 90%;         /* 90% of slider height */
+  width: 50%;          /* 40% of slider width */
+  left: 5%;            /* small margin from left */
+  bottom: 5%;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+
+#theme-toggle:checked + .slider {
+  background-color: #555;
+}
+
+#theme-toggle:checked + .slider:before {
+  transform: translateX(110%);
+}
+
+/* ----------------------------- */
+/* RESPONSIVE STYLES            */
+/* ----------------------------- */
 @media (max-width: 767px) {
   header {
     padding: 0.5rem 0.75rem;
@@ -113,36 +204,34 @@ header { /* or 'relative' if you don't want it to stick */
     width: 100%;
     order: 1;
     justify-content: center;
-    gap: 0.125rem;
-    align-items: center;
-  }
-
-  .logo img {
-    height: clamp(28px, 12vw, 50px);
-    margin-right: 0.125rem;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .logo h1 {
-    text-align: left;
-    width: auto;
-    font-size: clamp(16px, 5vw, 24px);
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
   }
 
   #navigation-bar ul {
     gap: 0.2rem;
   }
+
   #navigation-bar a {
-    font-size: 80%;
+    font-size: 70%;
     padding: 0.3rem 0.5rem;
+  }
+
+  .slider {
+    width: 70%;    /* you can still define a max width in px */
+    height: 60%;   /* maintain aspect ratio */
+  }
+
+  .slider:before {
+    height: 100%;
+    width: 55%;
+    left: 0%;
+    bottom: 0%;
+  }
+
+  #theme-toggle:checked + .slider:before {
+    transform: translateX(70%);
   }
 }
 
-/* Tablet and larger screens */
 @media (min-width: 768px) {
   header {
     flex-direction: row;
@@ -150,11 +239,6 @@ header { /* or 'relative' if you don't want it to stick */
     padding: 0.75rem 2rem;
     gap: 2rem;
     flex-wrap: nowrap;
-  }
-
-  .logo {
-    order: 1;
-    flex-shrink: 0;
   }
 
   #navigation-bar {
@@ -174,6 +258,3 @@ header { /* or 'relative' if you don't want it to stick */
     padding: 0.5rem 0.75rem;
   }
 }
-
-
-

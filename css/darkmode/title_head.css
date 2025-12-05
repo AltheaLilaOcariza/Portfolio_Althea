@@ -1,0 +1,42 @@
+/* Light mode default */
+.title-area h2 {
+    z-index: 1;
+    font-family: Lobster;
+    color: #50164A; /* default dark pink */
+    text-align: center;
+    font-size: clamp(36px, 18vw, 220px);
+    margin: 0;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.scroll {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #50164A;
+    font-size: clamp(12px, 2.5vw, 16px);
+    transition: color 0.3s ease;
+}
+
+/* Use CSS variables for dark mode override */
+:root {
+    --title-color: #50164A; /* light mode default */
+    --scroll-color: #50164A; 
+}
+
+.title-area h2 {
+    color: var(--title-color);
+}
+
+.scroll {
+    color: var(--scroll-color);
+}
+
+/* Dark mode overrides */
+.dark-mode-theme {
+    --title-color: #f5f5f5;      /* light gray for dark background */
+    --scroll-color: #e0a3d3;     /* soft pink-purple for contrast */
+}

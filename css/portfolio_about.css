@@ -19,10 +19,11 @@ b{
   justify-content: flex-start;
   gap: 1rem;
   /*min-height: calc(100vh - 7rem);*/
-  width: 100%;
+  width: 95%;
   background-color: white;
   margin-top: 15vh; 
-  margin-left: 0;
+  margin-left: 2vh;
+  margin-right: 2vh;
   margin-bottom: 15vh;
   padding: 7rem 1rem 0;
   box-sizing: border-box;
@@ -105,7 +106,7 @@ b{
 @media (min-width: 768px) {
   .about-container {
     width: 85%;
-    margin: 8vh auto;
+    margin: 8vh 2vh;
     padding: 7rem 2rem 2rem;
   }
 

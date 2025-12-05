@@ -1,0 +1,60 @@
+/* Wave colors */
+:root {
+  --wave1: #f7a6cb;   /* deep pink  */
+  --wave2: #ffc7de;   /* medium pink */
+  --wave3: #ffeaf2;   /* light pink */
+}
+
+/* Dark mode wave colors */
+.dark-mode-theme {
+  --wave1: #282828;   /* darkest layer */
+  --wave2: #4b4a4a;   /* mid layer */
+  --wave3: #6b6b6b;   /* top layer */
+}
+
+
+.color-themes {
+    --wave1: rgba(255, 20, 147, 0.6); 
+    --wave2: rgba(255, 105, 180, 0.7); 
+    --wave3: rgba(255, 105, 180, 0.9); 
+  --wave3: rgba(255, 105, 180, 0.9); 
+  --wave1: rgba(139, 0, 139, 0.6);  
+  --wave2: rgba(255, 20, 147, 0.7); 
+  --wave3: rgba(255, 105, 180, 0.9); 
+}
+
+
+.wave.wave1 { color: var(--wave1); transition: color 0.4s ease; }
+.wave.wave2 { color: var(--wave2); transition: color 0.4s ease; }
+.wave.wave3 { color: var(--wave3); transition: color 0.4s ease; }
+
+/* Wave container remains the same */
+.wave-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 12s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Optional: different durations for each wave */
+.wave.wave1 { animation-duration: 18s; }
+.wave.wave2 { animation-duration: 14s; }
+.wave.wave3 { animation-duration: 10s; }
