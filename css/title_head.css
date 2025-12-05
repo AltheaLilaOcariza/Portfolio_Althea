@@ -39,7 +39,7 @@
     }
     
     .title-area {
-        margin-top: clamp(10vh, 11vw, 11vh);
+        margin-top: clamp(30vh, 11vw, 30vh);
         padding-top: clamp(5vh, 7vw, 9vh);
         padding-bottom: clamp(5vh, 7vw, 9vh);
     }
