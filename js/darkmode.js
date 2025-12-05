@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("theme-toggle");
+  const themeBtn = document.querySelector(".switch");
 
   // Apply saved theme on page load
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode-theme");
-    if (toggle) toggle.checked = true;
+    if (themeBtn) themeBtn.classList.add("is-active");
   }
 
-  // Only add event listener if toggle exists
-  if (toggle) {
-    toggle.addEventListener("change", () => {
+  // Toggle dark/light mode on button click
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      themeBtn.classList.toggle("is-active");
       document.body.classList.toggle("dark-mode-theme");
 
       // Save preference

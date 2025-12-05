@@ -143,56 +143,6 @@ header {
 }
 
 /* ----------------------------- */
-/* DARK MODE TOGGLE (SLIDER)    */
-/* ----------------------------- */
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 55px;
-  height: 35px;
-  align-items: center;
-  justify-items: center;
-  margin-left: 1rem;
-}
-
-/* hide checkbox */
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
-  margin-top: 10%;
-}
-
-/* Slider knob */
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 90%;         /* 90% of slider height */
-  width: 50%;          /* 40% of slider width */
-  left: 5%;            /* small margin from left */
-  bottom: 5%;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.4s;
-}
-
-
-#theme-toggle:checked + .slider {
-  background-color: #555;
-}
-
-#theme-toggle:checked + .slider:before {
-  transform: translateX(110%);
-}
-
-/* ----------------------------- */
 /* RESPONSIVE STYLES            */
 /* ----------------------------- */
 @media (max-width: 767px) {
@@ -215,21 +165,6 @@ header {
     padding: 0.3rem 0.5rem;
   }
 
-  .slider {
-    width: 70%;    /* you can still define a max width in px */
-    height: 60%;   /* maintain aspect ratio */
-  }
-
-  .slider:before {
-    height: 100%;
-    width: 55%;
-    left: 0%;
-    bottom: 0%;
-  }
-
-  #theme-toggle:checked + .slider:before {
-    transform: translateX(70%);
-  }
 }
 
 @media (min-width: 768px) {
