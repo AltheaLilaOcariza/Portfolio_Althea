@@ -104,3 +104,51 @@
 }
 
 
+/* Dark mode styles */
+/* Dark mode overrides */
+.dark-mode-theme .projects-card-container {
+    background-color: #1a1a1a00; /* dark background for container */
+    color: #f5f5f5; /* default text */
+}
+
+.dark-mode-theme .inside-project {
+    background-color: #2a1f2f; /* dark card background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: #f5f5f5;
+}
+
+.dark-mode-theme .inside-project a {
+    background-color: #934d84; /* purple for links/buttons */
+    color: #fff;
+}
+
+.dark-mode-theme .inside-project a:hover,
+.dark-mode-theme .inside-project a:active {
+    background-color: #d86fd9; /* hover color */
+    box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+.dark-mode-theme .card-header.big {
+    color: #e0a3d3; /* lighter pink-purple emphasis */
+}
+
+.dark-mode-theme .card-header.small {
+    color: #f5f5f5;
+}
+
+.dark-mode-theme .project-container {
+    background-color: #2a1f2f;
+}
+
+.dark-mode-theme .info-container p {
+    color: #f5f5f5;
+}
+
+.dark-mode-theme .slider-wrapper button {
+    background-color: #934d84; /* dark purple buttons */
+    color: #fff;
+}
+
+.dark-mode-theme .slider-wrapper button:hover {
+    background-color: #d86fd9; /* lighter pink-purple on hover */
+}

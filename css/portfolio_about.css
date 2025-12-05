@@ -139,3 +139,37 @@ b{
     width: auto;
   }
 }
+
+
+/* Dark mode overrides */
+.dark-mode-theme .about-container {
+    background-color: #1a1a1a;  /* dark background */
+    color: #f5f5f5;             /* default light text */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.dark-mode-theme .about-container b {
+    color: #e0a3d3;             /* soft pink-purple emphasis */
+}
+
+.dark-mode-theme .info-container h2,
+.dark-mode-theme .info-section h2 {
+    color: #e0a3d3;             /* headings in soft pink-purple */
+}
+
+.dark-mode-theme .line {
+    background-color: #934d84;  /* line in darker purple */
+}
+
+.dark-mode-theme .personal-info img,
+.dark-mode-theme .misc-info img {
+    filter: brightness(0.85);   /* slightly dim images to blend with dark background */
+}
+
+.dark-mode-theme .info-section li {
+    color: #f5f5f5;             /* list items light text */
+}
+
+.dark-mode-theme .bottom-quote {
+    color: #f5f5f5;             /* bottom quote text */
+}

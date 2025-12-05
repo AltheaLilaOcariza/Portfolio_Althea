@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=M+PLUS+Rounded+1c&display=swap');
 
+.dark-mode-theme {
+  --home-text: #f5f5f5;              /* general text, light gray */
+  --home-strong: #e0a3d3;            /* soft light pink-purple for emphasis */
+  --btn-bg: #934d84;                  /* deep purple for button background */
+  --btn-hover: #d86fd9;               /* lighter pinkish-purple for hover */
+  --btn-secondary-bg: transparent;    
+  --btn-secondary-color: #e0a3d3;     /* matches emphasis color */
+}
+
+
 .timeline {
     z-index: 1;
     position: relative;
@@ -14,25 +24,12 @@
     --timeline-neg-gap: -1.5%;
 }
 
-/*
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background-color: rgb(246, 232, 234);
-    transform: translateX(-50%);
-}
-    */
-
 .timeline-item {
     position: relative;
     margin-bottom: 3%;            /* vertical spacing as percent */
     padding: 1.6%;                /* padding in percent for fluid scaling */
     background-color: #ffd5f0;
-    border-radius: 0.5%;
+    border-radius: 2%;
     box-shadow: 0 0.2% 0.6% rgba(247, 166, 203, 0.384);
     width: var(--timeline-item-width); /* item width kept in percent */
     color:#50164A;
@@ -165,4 +162,35 @@
     .image-container{
         aspect-ratio: 4/3;
     }
+}
+
+/* Dark mode for timeline */
+.dark-mode-theme .timeline {
+    background-color: #1a1a1a00; /* dark background for timeline area */
+}
+
+.dark-mode-theme .timeline-item {
+    background-color: #2c1a34;  /* deep purple/pinkish background */
+    color: var(--home-text);     /* light text */
+    box-shadow: 0 0 0.6% rgba(0,0,0,0.5);
+}
+
+.dark-mode-theme .timeline-item:first-child {
+    background-color: #3b1f52;  /* slightly lighter purple for first item */
+}
+
+.dark-mode-theme .timeline-dot {
+    background-color: var(--home-strong); /* pink-purple dots */
+}
+
+.dark-mode-theme .timeline-content h3,
+.dark-mode-theme .timeline-address,
+.dark-mode-theme .timeline-date {
+    color: var(--home-text);
+}
+
+.dark-mode-theme .image-container {
+    filter: brightness(0.85); /* slightly dim images */
+    border-color: #934d84;    /* darker border for contrast */
+    box-shadow: 0 0 0.3% rgba(0,0,0,0.5);
 }
