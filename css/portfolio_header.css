@@ -78,10 +78,19 @@ header {
   flex-shrink: 0;
 }
 
-.logo img{
-  height: clamp(35px, 6vw, 70px);
+.logo object{
+  height: 70px;
   width: auto;
   flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .logo object{
+    height: 30px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
 }
 
 .logo h1 {

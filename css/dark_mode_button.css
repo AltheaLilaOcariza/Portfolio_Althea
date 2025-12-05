@@ -1,5 +1,5 @@
 .switch {
-  --width: clamp(40px, 8vw, 55px);
+  --width: clamp(50px, 9vw, 65px);
   --height: clamp(25px, 5vw, 35px);
   --margin: 2px;
 
@@ -7,7 +7,7 @@
   --color-day: rgba(91, 169, 211, 1);
   --color-sun: rgba(246, 211, 90, 1);
 
-  --ease: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --duration: .85s;
 
   position: relative;
@@ -30,6 +30,10 @@
   transition: opacity var(--duration) var(--ease);
   opacity: 0;
   z-index: 1;
+}
+
+.switch.is-active:after {
+  opacity: 1;
 }
 
 .switch__inner {
@@ -57,7 +61,7 @@
   margin: var(--margin);
   border-radius: 999px;
   background-color: var(--color-sun);
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   transition: transform var(--duration) var(--ease);
   z-index: 1;
 }
