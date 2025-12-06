@@ -15,8 +15,8 @@ b{
 .about-container {
   position: relative;           /* allows stacking above the wave */
   z-index: 1;                   /* keeps it in front of the background animation */
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   /*min-height: calc(100vh - 7rem);*/
   width: 95%;
@@ -99,19 +99,22 @@ b{
 }
 
 .line{
-  width: 90%;
+  width: 85%;
 }
 
-/* Tablet and larger screens */
-@media (min-width: 768px) {
+/* Tablet and larger screens*/
+@media (min-width: 900px) {
   .about-container {
-    width: 85%;
+    width: 80%;
     margin: 8vh 2vh;
     padding: 7rem 2rem 2rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .personal-info {
     flex-direction: row;
+    align-items: center;
     column-gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -127,11 +130,14 @@ b{
   }
 }
 
+
 @media (min-width: 1024px) {
   .about-container {
     width: 70%;
     margin: 8vh auto;
     padding: 7rem 3rem 3rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .personal-info img {
